@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { useTodos } from "../contexts/TodoContext";
 import { useTheme } from "../contexts/ThemeContext";
 
@@ -7,7 +7,7 @@ export function TodoInput() {
   const { addTodo } = useTodos();
   const { theme } = useTheme();
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!text.trim()) return;
